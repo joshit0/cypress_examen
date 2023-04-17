@@ -69,7 +69,7 @@ realizar_compra.feature
 ```
 Feature: Realizar compra
 
-  Scenario Outline: Realizar compra de un producto
+  Scenario Outline: Realizar compra de un producto - <email>
     Given I open automationexercise page
     And go to "login" page
     And log in with credentials
@@ -83,12 +83,13 @@ Feature: Realizar compra
     And procced to checkout
     And place order
     And pay the product with card
-      | card_name       | card_number      | cvc | expiration_MM | expiration_YYYY |
-      | Automation Card | 9548451415141256 | 325 |            06 |            2028 |
+      | card_name   | card_number   | cvc   | expiration_MM   | expiration_YYYY   |
+      | <card_name> | <card_number> | <cvc> | <expiration_MM> | <expiration_YYYY> |
     Then show message "Congratulations! Your order has been confirmed!"
 
     Examples: 
       | email                    | password       | product    | card_name       | card_number      | cvc | expiration_MM | expiration_YYYY |
       | automationtest@gmail.com | automationtest | Winter Top | Automation Card | 9548451415141256 | 325 |            06 |            2028 |
+      | juanperez@gmail.com      | Dsbshr123*     | Winter Top | Juan Perez      | 4711550012484522 | 665 |            12 |            2030 |
 
 ```
