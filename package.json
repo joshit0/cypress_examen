@@ -1,0 +1,31 @@
+{
+  "name": "cypress_examen",
+  "version": "1.0.0",
+  "description": "cypress_examen",
+  "main": "index.js",
+  "scripts": {
+    "cypress_open": "cypress open",
+    "test_all": "cypress run --spec cypress/examen/features/*.feature --browser chrome --env allure=true",
+    "allure:clear": "rmdir allure-results /S /Q && rmdir allure-report /S /Q && rmdir cypress\\screenshots /S /Q && rmdir cypress\\videos /S /Q ",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:open":"allure open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshit0/cypress_examen.git"
+  },
+  "author": "José Luis Quispe Pino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshit0/cypress_examen/issues"
+  },
+  "homepage": "https://github.com/joshit0/cypress_examen#readme",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "github:bahmutov/cypress-esbuild-preprocessor",
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "allure-commandline": "^2.21.0",
+    "cypress": "^12.0.2",
+    "multiple-cucumber-html-reporter": "^3.0.1"
+  }
+}
